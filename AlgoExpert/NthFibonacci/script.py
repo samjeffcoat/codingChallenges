@@ -24,3 +24,4 @@ def getNthFib3(n):
         lastTwo[1] = nextFib
         counter += 1
      return lastTwo[1] if n > 1 else lastTwo[0]
+     
