@@ -1,3 +1,4 @@
+# O(n) time | O(1) space
 def findThreeLargestNumbers(array):
     # initialize are array with length of 3 and no values
     threeLargest = [None, None, None]
@@ -8,7 +9,7 @@ def findThreeLargestNumbers(array):
 
 def updateLargest(threeLargest, num):
     if threeLargest[2] is None or num is > threeLargest[2]:
-        shiftAndUpdate(threeLargest, num, 2)  # todo
+        shiftAndUpdate(threeLargest, num, 2)  
     elif threeLargest[1] is None or num is > threeLargest[1]:
         shiftAndUpdate(threeLargest, num, 1)
     elif threeLargest[0] is None or num > threeLargest[0]:
