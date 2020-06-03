@@ -1,6 +1,5 @@
 Write a function that receives as input the head node of a linked list and an integer k. Your function should
 remove the kth node from the end of the linked list and return the head node of the updated list.
-Programming problems and Competitions :: HackerRank
 For example, if we have the following linked list:
 (20) -> (19) -> (18) -> (17) -> (16) -> (15) -> (14) -> (13) -> (12) -> (11) ->
 null
