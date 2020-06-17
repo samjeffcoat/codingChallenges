@@ -14,3 +14,5 @@ function removeEven(arr) {
 function removeEven2(arr) {
   return arr.filter((t) => t % 2 != 0);
 }
+
+// Both functions have a time complexity of O(n) since we are not doing any loops or anythign
