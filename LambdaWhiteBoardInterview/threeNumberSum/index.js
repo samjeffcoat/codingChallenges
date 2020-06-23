@@ -19,3 +19,5 @@ function threeNumberSum(arr, target) {
   }
   return triplets;
 }
+
+console.log(threeNumberSum([1, 3, 4, 10, 24, 50, 75, 80, 156], 156));
