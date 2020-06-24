@@ -1,18 +1,32 @@
 function threeNumberSum(arr, target) {
+  // sort our array because we want to use pointers
   arr.sort((a, b) => a - b);
+
+  // declare our triplets array
   const triplets = [];
+  // loop through our input array
   for (let i = 0; i < arr.length - 2; i++) {
+    //declare a left and right pointer
     let leftPointer = i + 1;
     let rightPointer = arr.length - 1;
+
+    //as long as our left pointer is less than right pointer(it will be)
     while (leftPointer < rightPointer) {
-      const current = arr[i] + arr[leftPointer] + arr[rightPointer];
+      //declare our current sum as sum of current index and current
+      const current = [arr[i] + arr[leftPointer] + arr[rightPointer]];
+      // if we hit our target sum
       if (current === target) {
-        triplets.push([arr[i], arr[leftPointer], arr[rightPointer]]);
+        // push the values to our new array
+        triplets.push(arr[i], arr[leftPointer], arr[rightPointer]);
         leftPointer++;
         rightPointer--;
       } else if (current < target) {
         leftPointer++;
+
+        // incrementing left guarantees increasing greater sum
       } else if (current > target) {
+        // decrementing right guarantees decreasing a number sum
+
         rightPointer--;
       }
     }
@@ -20,4 +34,4 @@ function threeNumberSum(arr, target) {
   return triplets;
 }
 
-console.log(threeNumberSum([1, 3, 4, 10, 24, 50, 75, 80, 156], 156));
+console.log(threeNumberSum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 20));

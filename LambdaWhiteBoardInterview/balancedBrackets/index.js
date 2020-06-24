@@ -1,10 +1,20 @@
 function balancedBrackets(string) {
+  const myArray = Array.from(string);
+  //console.log(myArray);
+  var result = {};
+  myArray.forEach(function (x) {
+    result[x] = (result[x] || 0) + 1;
+  });
+  //console.log(result);
+  console.log(result);
+  const firstChar = result[Object.keys(result)[0]];
+  console.log(firstChar);
   //intialize string of all opening brackets
-  const openingBrackets = '([{';
+  const openingBrackets = '([{|';
   // intialize string of all closing brackets
   const closingBrackets = ')]}|';
 
-  const onlyMatchingBracket = '|';
+  const onlyMatchingBracket = '||';
   // hashtable, map closing brackets to opening brackets
   const matchingBrackets = { ')': '(', ']': '[', '}': '{', '|': '|' };
 
@@ -27,7 +37,10 @@ function balancedBrackets(string) {
       //check  to see last value in our in our closing bracket maps to opening bracket
 
       //pop off that value of the stack
-      if (stack[stack.length - 1] === matchingBrackets[char]) {
+      if (
+        stack[stack.length - 1] === matchingBrackets[char] ||
+        result[Object.keys(result)[0]] % 2 === 0
+      ) {
         stack.pop();
       } else {
         return false;
@@ -37,11 +50,11 @@ function balancedBrackets(string) {
   return stack.length === 0;
 }
 
-console.log(balancedBrackets('||({{}})'));
-console.log(balancedBrackets('{}'));
-console.log(balancedBrackets('||({{}})]'));
-// console.log(balancedBrackets('||'));
-// console.log(balancedBrackets('||'));
+//console.log(balancedBrackets('||({{}})'));
+//console.log(balancedBrackets('{}'));
+//console.log(balancedBrackets('||({{}})]'));
+//console.log(balancedBrackets('(('));
+console.log(balancedBrackets('||'));
 // console.log(balancedBrackets('||'));
 // console.log(balancedBrackets('||'));
 // console.log(balancedBrackets('||'));
